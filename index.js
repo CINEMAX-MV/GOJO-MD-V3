@@ -110,17 +110,16 @@ async function connectToWA() {
         saveCreds
     } = await useMultiFileAuthState(__dirname + '/lib//session/')
     const conn = makeWASocket({
-        logger: P({
-            level: "fatal"
-        }).child({
-            level: "fatal"
-        }),
-        printQRInTerminal: true,
-        generateHighQualityLinkPreview: true,
-        auth: state,
-        defaultQueryTimeoutMs: undefined,
-        msgRetryCounterCache
-    })
+    logger: P({
+        level: "fatal"
+    }).child({
+        level: "fatal"
+    }),
+    generateHighQualityLinkPreview: true,
+    auth: state,
+    defaultQueryTimeoutMs: undefined,
+    msgRetryCounterCache
+})
 
     conn.ev.on('connection.update', async (update) => {
         const {
