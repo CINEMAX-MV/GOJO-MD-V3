@@ -1,3 +1,3 @@
 module.exports = (conn) => {
-    console.log("Plugin loaded!");
-};
+    console.log("🎉 Plugin loaded successfully!");
+}
